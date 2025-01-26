@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import {RegisterLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Hero() {
     return (
@@ -44,13 +45,17 @@ export default function Hero() {
                 <div className='flex gap-4 flex-col mt-5'>
                     <h3 className='text-md font-semibold'>Sign Up Free with your Email or Google</h3>
                     <div className='flex justify-center gap-4'>
-                        <Button className="flex justify-center items-center w-[200px] h-[50px] bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
-                            Get Started
-                        </Button>
-                        <Button className="flex justify-center items-center gap-2 w-[200px] h-[50px] font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
-                            <Image src='/images/google.png' alt='google' width={24} height={24}/>
-                            Sign up with Google
-                        </Button> 
+                        <RegisterLink>
+                            <Button className="flex justify-center items-center w-[200px] h-[50px] bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
+                                Get Started
+                            </Button>
+                        </RegisterLink>
+                        <RegisterLink>
+                            <Button className="flex justify-center items-center gap-2 w-[200px] h-[50px] font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
+                                <Image src='/images/google.png' alt='google' width={24} height={24}/>
+                                Sign up with Google
+                            </Button>
+                        </RegisterLink> 
                     </div>
                     <hr></hr>
                     <h2 className='font-semibold'><span className='text-primary'>Sign up Free with Email.</span> Start organizing your meetings today, absolutely free.</h2>

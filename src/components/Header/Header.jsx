@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -32,10 +33,16 @@ export default function Header() {
                 </nav>
 
                 <div className='hidden lg:flex gap-5'>
-                    <Button className="text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">Login</Button>
-                    <Button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
-                        Get Started
-                    </Button>
+                    <LoginLink>
+                        <Button className="text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
+                            Login
+                        </Button>
+                    </LoginLink>
+                    <RegisterLink>
+                        <Button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
+                            Get Started
+                        </Button>
+                    </RegisterLink>  
                 </div>
 
                 <div className="flex lg:hidden ml-auto">
@@ -100,12 +107,16 @@ export default function Header() {
                             <Link href="/contactUs" className="block text-lg font-medium text-white hover:text-primary transition duration-300">Contact Us</Link>
 
                             <div className="mt-4">
-                                <Button className="w-full text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300 mb-3">
-                                    Login
-                                </Button>
-                                <Button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
-                                    Get Started
-                                </Button>
+                                <LoginLink>
+                                    <Button className="w-full text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300 mb-3">
+                                        Login
+                                    </Button>
+                                </LoginLink>
+                                <RegisterLink>
+                                    <Button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity duration-300">
+                                        Get Started
+                                    </Button>
+                                </RegisterLink>
                             </div>
                         </nav>
                     </div>
